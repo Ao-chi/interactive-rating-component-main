@@ -18,11 +18,11 @@ function showThankyouCard() {
 
     if (submitCount != totalAttempts) {
         submitCount++;
-        console.log(submitCount);
+        // console.log(submitCount);
     } else {
         submitCount = 0;
         ratetBtn.setAttribute("disabled", "");
-        console.log("out of tries");
+        // console.log("out of tries");
     }
 }
 
@@ -75,17 +75,6 @@ function getValue() {
     }
 }
 
-//get attemtpts
-function attemptCounter() {
-    let submitCount = 0;
-    let totalAttempts = 2;
-    let array = new Array();
-
-    if ((submitBtn.clicked = true)) {
-        submitCount++;
-        console.log(submitCount);
-    }
-}
 // for (const f of ratingValue) {
 //     if (f.checked) {
 //         console.log(f?.value);
