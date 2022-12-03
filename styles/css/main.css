@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.4;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  transition: ease-in-out 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  color: hsl(0deg, 0%, 41%);
+}
+
+body {
+  background: hsl(216deg, 12%, 8%);
+  height: 100%;
+  letter-spacing: 0.5px;
+  font-family: "Manrope", sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 5%;
+}
+main section {
+  position: relative;
+  height: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .card {
+  position: absolute;
+  margin: 0 auto;
+  background: hsl(213deg, 19%, 18%);
+  background: rgb(27, 32, 38);
+  background: linear-gradient(0deg, rgb(27, 32, 38) 0%, rgb(37, 45, 55) 82%);
+  max-width: 400px;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+main .card.card-one.d-none {
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+}
+main .card .icon-star {
+  margin-bottom: 1rem;
+}
+main .card .icon-star img {
+  background: #31373f;
+  padding: 1rem;
+  border-radius: 100%;
+}
+main .card .card-title h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: hsl(0deg, 0%, 100%);
+}
+main .card .card-desc p {
+  font-size: 15px;
+  color: hsl(217deg, 12%, 63%);
+}
+main .card .submit {
+  position: relative;
+  font-size: 1rem;
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(25deg, 97%, 53%);
+  border: 1px solid hsl(25deg, 97%, 53%);
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.875rem;
+  width: 100%;
+  cursor: pointer;
+}
+main .card .submit:hover {
+  color: hsl(25deg, 97%, 53%);
+  font-weight: 700;
+  background: hsl(0deg, 0%, 100%);
+  border: 1px solid hsl(0deg, 0%, 100%);
+}
+main .card .tooltip {
+  text-transform: capitalize;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: hsl(216deg, 12%, 54%);
+  border-radius: 12px;
+  padding: 0.5rem;
+  visibility: hidden;
+  opacity: 0;
+}
+main .card button:disabled {
+  color: hsl(0deg, 0%, 100%);
+  background: #fc9145;
+  border: 1px solid hsl(25deg, 97%, 53%);
+  cursor: not-allowed;
+}
+main .card button:disabled:hover {
+  font-weight: 400;
+  color: hsl(0deg, 0%, 100%);
+  background: #fc9145;
+  border: 1px solid hsl(25deg, 97%, 53%);
+  cursor: not-allowed;
+}
+main .card button:disabled:hover .tooltip {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+}
+main .card button:disabled:hover .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  margin-left: -5px;
+  border-width: 9px;
+  border-style: solid;
+  border-color: hsl(216deg, 12%, 54%) transparent transparent transparent;
+}
+
+.ratings {
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  flex-flow: row-reverse;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ratings label {
+  color: hsl(216deg, 12%, 54%);
+  background: #31373f;
+  border-radius: 100%;
+  padding: 1rem;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  line-height: 1;
+  cursor: pointer;
+}
+.ratings input {
+  display: none;
+}
+.ratings input:checked + label, .ratings input:checked ~ label {
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(25deg, 97%, 53%);
+}
+.ratings input:not(:checked) ~ label:hover {
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(217deg, 12%, 63%);
+}
+
+.thank-you {
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.thank-you .select {
+  width: 58%;
+  margin: 0 auto;
+}
+.thank-you .select p {
+  font-size: 15px;
+  color: hsl(25deg, 97%, 53%);
+  background: #2b3540;
+  border-radius: 20px;
+  padding: 0.5rem;
+}
+@media (max-width: 768px) {
+  .thank-you .select {
+    width: 72%;
+  }
+}
+.thank-you.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=main.css.map */

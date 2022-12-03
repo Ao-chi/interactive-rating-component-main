@@ -1,0 +1,202 @@
+@import "./abstracts/reset";
+@import "./abstracts/functions";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./base/fonts";
+@import "./base/base";
+
+body {
+    background: $very-dark-blue;
+    height: 100%;
+    letter-spacing: 0.5px;
+    @include Manrope-font;
+}
+
+main {
+    @include display-flex(center, center);
+    height: 100%;
+    padding: 5%;
+    section {
+        position: relative;
+        height: inherit;
+        width: 100%;
+        @include display-flex(center, center);
+    }
+    .card {
+        position: absolute;
+        margin: 0 auto;
+        background: $dark-blue;
+        background: rgb(27, 32, 38);
+        background: linear-gradient(0deg, rgba(27, 32, 38, 1) 0%, rgba(37, 45, 55, 1) 82%);
+        max-width: 400px;
+        border-radius: 1rem;
+        padding: 2rem;
+
+        &.card-one {
+            &.d-none {
+                //display: none;
+                z-index: -1;
+                @include visibility-hiddden($hidden, $opacity-0);
+            }
+        }
+        .icon-star {
+            margin-bottom: $p-1;
+            img {
+                background: darken($medium-grey, 32%);
+                padding: $p-1;
+                border-radius: 100%;
+            }
+        }
+
+        .card-title {
+            h1 {
+                font-size: $h4-font-size;
+                font-weight: font-weight(font-normal);
+                color: $secondary-white;
+            }
+        }
+
+        .card-desc {
+            p {
+                font-size: font-size(font-15);
+                color: $light-gray;
+            }
+        }
+
+        .submit {
+            position: relative;
+            font-size: font-size(font-16);
+            color: $secondary-white;
+            background: $orange;
+            border: 1px solid $orange;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 0.875rem;
+            width: 100%;
+            cursor: pointer;
+
+            &:hover {
+                color: $orange;
+                font-weight: font-weight(font-bold);
+                background: $secondary-white;
+                border: 1px solid $secondary-white;
+            }
+        }
+        .tooltip {
+            text-transform: capitalize;
+            font-size: font-size(font-12);
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: $medium-grey;
+            border-radius: 12px;
+            padding: $p-0_5;
+            @include visibility-hiddden($hidden, $opacity-0);
+        }
+        button:disabled {
+            color: $secondary-white;
+            background: lighten($orange, 10%);
+            border: 1px solid $orange;
+            cursor: not-allowed;
+
+            &:hover {
+                font-weight: font-weight(font-normal);
+                color: $secondary-white;
+                background: lighten($orange, 10%);
+                border: 1px solid $orange;
+                cursor: not-allowed;
+
+                .tooltip {
+                    position: absolute;
+                    top: -2rem;
+                    right: 0;
+                    @include visibility-hiddden($visible, $opacity-1);
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 100%;
+                        right: 10%;
+                        margin-left: -5px;
+                        border-width: 9px;
+                        border-style: solid;
+                        border-color: $medium-grey transparent transparent transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ratings {
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    flex-flow: row-reverse;
+    @include display-flex(center, space-between);
+
+    label {
+        color: $medium-grey;
+        background: darken($medium-grey, 32%);
+        border-radius: 100%;
+        padding: $p-1;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        line-height: 1;
+        cursor: pointer;
+
+        // &:hover {
+        //     color: $secondary-white;
+        //     background: $light-gray;
+        // }
+    }
+
+    input {
+        display: none;
+
+        &:checked +,
+        &:checked ~ {
+            label {
+                color: $secondary-white;
+                background: $orange;
+            }
+        }
+
+        &:not(:checked) ~ {
+            label {
+                &:hover {
+                    color: $secondary-white;
+                    background: $light-gray;
+                }
+            }
+        }
+    }
+}
+
+.thank-you {
+    text-align: center;
+    //display: none;
+    @include visibility-hiddden($hidden, $opacity-0);
+    transition: all 0.3s;
+
+    .select {
+        width: 58%;
+        margin: 0 auto;
+        p {
+            font-size: font-size(font-15);
+            color: $orange;
+            background: lighten($dark-blue, 3%);
+            border-radius: 20px;
+            padding: $p-0_5;
+        }
+        @include breakpoint(sm, max) {
+            width: 72%;
+        }
+    }
+
+    &.show {
+        display: block;
+        @include visibility-hiddden($visible, $opacity-1);
+    }
+}
