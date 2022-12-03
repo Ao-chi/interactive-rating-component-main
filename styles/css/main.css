@@ -89,6 +89,7 @@ body {
   background: hsl(216deg, 12%, 8%);
   height: 100%;
   letter-spacing: 0.5px;
+  line-height: 1.5;
   font-family: "Manrope", sans-serif;
 }
 
@@ -114,7 +115,7 @@ main .card {
   background: rgb(27, 32, 38);
   background: linear-gradient(0deg, rgb(27, 32, 38) 0%, rgb(37, 45, 55) 82%);
   max-width: 400px;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   padding: 2rem;
 }
 main .card.card-one.d-none {
@@ -132,7 +133,7 @@ main .card .icon-star img {
 }
 main .card .card-title h1 {
   font-size: 1.75rem;
-  font-weight: 400;
+  font-weight: 700;
   color: hsl(0deg, 0%, 100%);
 }
 main .card .card-desc p {

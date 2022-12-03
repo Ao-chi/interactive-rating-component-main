@@ -9,6 +9,7 @@ body {
     background: $very-dark-blue;
     height: 100%;
     letter-spacing: 0.5px;
+    line-height: 1.5;
     @include Manrope-font;
 }
 
@@ -29,7 +30,7 @@ main {
         background: rgb(27, 32, 38);
         background: linear-gradient(0deg, rgba(27, 32, 38, 1) 0%, rgba(37, 45, 55, 1) 82%);
         max-width: 400px;
-        border-radius: 1rem;
+        border-radius: 1.5rem;
         padding: 2rem;
 
         &.card-one {
@@ -51,7 +52,7 @@ main {
         .card-title {
             h1 {
                 font-size: $h4-font-size;
-                font-weight: font-weight(font-normal);
+                font-weight: font-weight(font-bold);
                 color: $secondary-white;
             }
         }
