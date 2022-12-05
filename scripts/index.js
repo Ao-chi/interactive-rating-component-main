@@ -45,15 +45,6 @@ function reset() {
 
 // get raitng value
 function getValue() {
-    // for (let i = 0; i < ratingValue.length; i++) {
-    //     const btn = ratingValue[i];
-    //     // btn.addEventListener("click", () => {
-    //     if (btn.checked) {
-    //         console.log(btn.value);
-    //         selectedValue.innerHTML = btn.value;
-    //     }
-    //     // });
-    // }
     //working with no eventlistener
     // ratingValue.forEach((radio) => {
     //     if (radio.checked) {
@@ -70,6 +61,7 @@ function getValue() {
             selectedValue.innerHTML = radio.value;
             break;
         } else if (isChecked == 0) {
+            //console.log(radio.value);
             selectedValue.innerHTML = 0;
         }
     }

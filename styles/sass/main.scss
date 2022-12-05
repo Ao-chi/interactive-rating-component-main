@@ -32,7 +32,6 @@ main {
         max-width: 400px;
         border-radius: 1.5rem;
         padding: 2rem;
-
         &.card-one {
             &.d-none {
                 //display: none;
@@ -102,6 +101,7 @@ main {
             cursor: not-allowed;
 
             &:hover {
+                animation: shake 1.5s ease 1;
                 font-weight: font-weight(font-normal);
                 color: $secondary-white;
                 background: lighten($orange, 10%);
@@ -130,6 +130,21 @@ main {
     }
 }
 
+@keyframes bounce2 {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
 .ratings {
     margin: 2rem 0;
     flex-wrap: wrap;
@@ -180,7 +195,6 @@ main {
     //display: none;
     @include visibility-hiddden($hidden, $opacity-0);
     transition: all 0.3s;
-
     .select {
         width: 58%;
         margin: 0 auto;
@@ -197,7 +211,41 @@ main {
     }
 
     &.show {
-        display: block;
+        //display: block;
+        animation: bounce2 1s ease 1;
         @include visibility-hiddden($visible, $opacity-1);
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateY(0);
     }
 }
